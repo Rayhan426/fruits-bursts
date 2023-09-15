@@ -1,12 +1,456 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fruits bursts</title>
-    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+
+    <!-- install tailwind and daisy ui -->
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/48abf48e76.js" crossorigin="anonymous"></script>
+
+
+    <!-- font links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        .lato-font {
+            font-family: 'Lato', sans-serif;
+        }
+    </style>
+
+    <!-- custom color by tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        'light-gray': '#12121299',
+                        'button-tomato': '#F85559',
+
+                    }
+
+
+                }
+            }
+        }
+    </script>
+
+    <!-- font awesome link  -->
+    <script src="https://kit.fontawesome.com/48abf48e76.js" crossorigin="anonymous"></script>
+
+    <!--  -->
 </head>
-<body>
-    
+
+<body class="lato-font">
+    <!-- heading section -->
+    <header class="container mx-auto">
+        <nav class=" lg:my-12 my-8">
+            <div class="navbar lg:bg-[#F85559] py-7 rounded-full">
+                <div class="navbar-start hidden lg:flex">
+                    <ul class="menu menu-horizontal px-5">
+                        <li><a class="font-medium text-lg text-white">Home</a></li>
+                        <li><a class="font-medium text-lg text-white">About Us</a></li>
+                        <li><a class="font-medium text-lg text-white">Shop</a></li>
+                        <li><a class="font-medium text-lg text-white">All Fruits</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-center">
+                    <div class="dropdown">
+                        <label tabindex="0" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </label>
+                        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 w-52">
+                            <li><a>Home</a></li>
+                            <li><a>About Us</a></li>
+                            <li><a>Shop</a></li>
+                            <li><a>All Fruits</a></li>
+                        </ul>
+                    </div>
+                    <img src="./images/logo.png" alt="" />
+                    <a class="  normal-case text-4xl font-bold lg:text-white sm:text-black px-3">Fruit
+                        Burst</a>
+                </div>
+                <div class="navbar-end rounded-full relative">
+                    <input type="text" name="search" placeholder="search here"
+                        class="py-2 px-10 mr-5 rounded-full border-none outline-none hidden lg:flex" />
+                    <span class="hidden lg:flex absolute mr-10">
+                        <i class="text-red-400 fa-solid fa-magnifying-glass"></i>
+                    </span>
+                </div>
+            </div>
+        </nav>
+        <!-- nav ended -->
+
+
+        <!-- carousel here -->
+        <div class="mx-5 lg:h-[600px] h-48 ">
+            <div class="carousel w-full lg:h-[600px] h-48 rounded-lg">
+                <div id="slide1" class="carousel-item relative w-full  bg-no-repeat bg-cover"
+                    style="background-image: url(./images/banner1.png);">
+                    <div class="text-center mx-auto lg:space-y-5 space-y-1 lg:mt-40 lg:mb-2 mt-4">
+                        <h1 class="lg:font-extrabold lg:text-7xl text-2xl  font-bold text-white">
+                            Exotic tastes at your <br />
+                            doorstep
+                        </h1>
+                        <p class="text-white text-base">We supply highly quality <br> organic products</p>
+                        <button class="btn bg-button-tomato border-none text-white normal-case px-7 py-4">
+                            Shop Now
+                        </button>
+                    </div>
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide4" class="btn btn-circle">❮</a>
+                        <a href="#slide2" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+
+                <!-- second slider  -->
+                <div id="slide2" class="carousel-item relative w-full  bg-no-repeat bg-cover"
+                    style="background-image: url(./images/banner2.png);">
+                    <div class="text-center mx-auto lg:space-y-5 space-y-1 lg:mt-40">
+                        <h1 class="lg:font-extrabold lg:text-7xl  font-bold text-2xl text-pink-400">
+                            Exotic tastes at your <br />
+                            doorstep
+                        </h1>
+                        <p class="text-violet-600">We supply highly quality <br> organic products</p>
+                        <button class="btn bg-button-tomato border-none text-white normal-case px-7 py-4">
+                            Shop Now
+                        </button>
+                    </div>
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide1" class="btn btn-circle">❮</a>
+                        <a href="#slide3" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+                <!-- third slider  -->
+                <div id="slide3" class="carousel-item relative w-full  bg-no-repeat bg-cover"
+                    style="background-image: url(./images/banner3.png);">
+                    <!-- <img src="images/banner1.png" class="w-full" /> -->
+                    <div class="text-center mx-auto lg:space-y-5 space-y-1 lg:mt-40">
+                        <h1 class="lg:font-extrabold lg:text-7xl  font-bold text-2xl text-violet-500">
+                            Exotic tastes at your <br />
+                            doorstep
+                        </h1>
+                        <p class="text-white">We supply highly quality <br> organic products</p>
+                        <button class="btn bg-button-tomato border-none text-white normal-case px-7 py-4">
+                            Shop Now
+                        </button>
+                    </div>
+
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide2" class="btn btn-circle">❮</a>
+                        <a href="#slide4" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+
+                <!-- 4th slider -->
+
+                <div id="slide4" class="carousel-item relative w-full lg:h-[600px]  bg-no-repeat bg-cover"
+                    style="background-image: url(./images/banner4.png);">
+                    <!-- <img src="images/banner1.png" class="w-full" /> -->
+                    <div class="text-center mx-auto lg:space-y-5 space-y-1 lg:mt-40">
+                        <h1 class="lg:font-extrabold lg:text-7xl  font-bold text-2xl text-orange-400">
+                            Exotic tastes at your <br />
+                            doorstep
+                        </h1>
+                        <p class="text-white">We supply highly quality <br> organic products</p>
+                        <button class="btn bg-button-tomato border-none text-white normal-case px-7 py-4">
+                            Shop Now
+                        </button>
+                    </div>
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide3" class="btn btn-circle">❮</a>
+                        <a href="#slide1" class="btn btn-circle">❯</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- fruits banner float -->
+        <div class=" max-w-screen-xl mx-auto  ">
+            <div
+                class="text-center  hidden lg:flex gap-24 lg:ml-8 lg:-mt-24 absolute bg-white rounded-lg px-16 py-12 drop-shadow-lg">
+
+                <div>
+                    <img src="./images/fruit1.png" alt="">
+                    <p>Grapes</p>
+                </div>
+                <div>
+                    <img src="./images/fruit2.png" alt="">
+                    <p class="text-gray ">Orange</p>
+                </div>
+                <div>
+                    <img src="./images/fruit3.png" alt="">
+                    <p class="text-gray">Mango</p>
+                </div>
+                <div>
+                    <img src="./images/fruit4.png" alt="">
+                    <p class="text-gray">Strawberry</p>
+                </div>
+                <div>
+                    <img src="./images/fruit5.png" alt="">
+                    <p class="text-gray">Pomgranate</p>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <!-- header section completed -->
+    <!-- header section completed -->
+
+
+
+
+    <main class="container mx-auto">
+        <!-- first section -->
+        <section class="lg:mt-64 md:my-8 my-9">
+
+            <div class="flex flex-col lg:flex-row  lg:p-0 md:p-8 p-5 text-center lg:text-left">
+                <div class="space-y-6 flex-1">
+                    <h3 class="text-5xl font-extrabold ">Deal of the day</h3>
+                    <p class="text-light-gray   ">Contrary to popular belief, is not simply random
+                        text. It has
+                        roots in a
+                        piece of classical <br> Latin
+                        literature from 45 BC, making it over 2000 years old.</p>
+                </div>
+
+                <!-- this is time part -->
+                <div class=" flex justify-center items-center mt-5">
+                    <div class="grid grid-flow-col gap-4 text-center auto-cols-max mx-auto">
+                        <div class="flex flex-col">
+                            <span class="countdown  text-5xl font-extrabold">
+                                <span style="--value:29"></span>:
+                            </span>
+                            <span class="text-light-gray font-medium">Days</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="countdown text-5xl font-extrabold">
+                                <span style="--value: 15"></span>:
+                            </span>
+                            <span class="text-light-gray font-medium">Hours</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="countdown text-5xl font-extrabold">
+                                <span style="--value: 25"></span>:
+                            </span>
+                            <span class="text-light-gray font-medium"> Minutes </span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="countdown  text-5xl font-extrabold">
+                                <span style="--value: 08"></span>
+                            </span>
+                            <span class="text-light-gray font-medium "> Seconds </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- time part ended -->
+
+            <!-- this is the prices of products item container -->
+            <div class="mt-12 ">
+                <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-7 lg:p-0 md:p-5 p-5">
+                    <div class="space-y-5 border-2 rounded-lg text-center p-8 mt-5">
+                        <div class="flex justify-center">
+                            <img src="images/fruit6.png" alt="fruit6" />
+                        </div>
+                        <h3 class="font-bold text-2xl text-center">12.90$ - 18.85$</h3>
+                        <hr />
+                        <p class="text-light-gray">Apples</p>
+                        <i class="fa-solid fa-star text-button-tomato"></i>
+                        <i class="fa-solid fa-star text-button-tomato"></i>
+                        <i class="fa-regular fa-star text-button-tomato"></i>
+                        <i class="fa-regular fa-star text-button-tomato"></i>
+                        <i class="fa-regular fa-star text-button-tomato"></i>
+                        <!-- The button to open modal -->
+
+                        <!-- start modal  -->
+                        <!--start modal 1st -->
+                        <div class="block">
+                            <a href="#my_modal_6" class="text-button-tomato font-bold">Details</a>
+                            <div class="modal" id="my_modal_6">
+                                <div class="modal-box">
+
+                                    <div class="flex justify-center">
+                                        <img src="images/fruit6.png" alt="" />
+                                    </div>
+                                    <h3 class="text-lg font-extrabold mt-4">Apples</h3>
+                                    <p class="py-4 text-light-gray text-center">
+                                        Professional employees are there for you to pick the most
+                                        <br />
+                                        amazing and fresh fruits.
+                                    </p>
+                                    <div>
+                                        <i class="fa-solid fa-star text-button-tomato"></i>
+                                        <i class="fa-solid fa-star text-button-tomato"></i>
+                                        <i class="fa-regular fa-star text-button-tomato"></i>
+                                        <i class="fa-regular fa-star text-button-tomato"></i>
+                                        <i class="fa-regular fa-star text-button-tomato"></i>
+                                    </div>
+                                    <div class="modal-action flex justify-center text-center">
+                                        <a href="#" class="btn btn-outline btn-error">Close</a>
+                                        <a href="#" class="btn bg-button-tomato text-white">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- modal end  -->
+                    </div>
+                    <div class="space-y-5 border-2 rounded-lg text-center p-8 mt-5">
+                        <div class="flex justify-center">
+                            <img src="images/fruit7.png" alt="fruit6" />
+                        </div>
+                        <h3 class="font-bold text-2xl text-center">12.90$ - 18.85$</h3>
+                        <hr />
+                        <p class="text-light-gray ">Orange</p>
+                        <i class="fa-solid fa-star text-button-tomato"></i>
+                        <i class="fa-solid fa-star text-button-tomato"></i>
+                        <i class="fa-regular fa-star text-button-tomato"></i>
+                        <i class="fa-regular fa-star text-button-tomato"></i>
+                        <i class="fa-regular fa-star text-button-tomato"></i>
+
+                        <!-- start modal 2st  -->
+                        <div class="block">
+                            <a href="#my_modal_7" class="text-button-tomato font-bold">Details</a>
+                            <div class="modal" id="my_modal_7">
+                                <div class="modal-box">
+                                    <div class="flex justify-center">
+                                        <img src="images/fruit7.png" alt="" />
+                                    </div>
+                                    <h3 class="text-lg font-extrabold mt-4">Orange</h3>
+
+                                    <p class="py-4 py-4 text-light-gray text-center">
+                                        Professional employees are there for you to pick the most
+                                        <br />
+                                        amazing and fresh fruits.
+                                    </p>
+                                    <div>
+                                        <i class="fa-solid fa-star text-button-tomato"></i>
+                                        <i class="fa-solid fa-star text-button-tomato"></i>
+                                        <i class="fa-regular fa-star text-button-tomato"></i>
+                                        <i class="fa-regular fa-star text-button-tomato"></i>
+                                        <i class="fa-regular fa-star text-button-tomato"></i>
+                                    </div>
+                                    <div class="modal-action flex justify-center text-center">
+                                        <a href="#" class="btn btn-outline btn-error">Close</a>
+                                        <a href="#" class="btn bg-button-tomato text-white">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end modal -->
+                    </div>
+                    <div class="space-y-5 border-2 rounded-lg text-center p-8 mt-5">
+                        <div class="flex justify-center">
+                            <img src="images/fruit8.png" alt="fruit6" />
+                        </div>
+                        <h3 class="font-bold text-2xl text-center">12.90$ - 18.85$</h3>
+                        <hr />
+                        <p class="text-light-gray">Red Dragon</p>
+                        <i class="fa-solid fa-star text-button-tomato"></i>
+                        <i class="fa-solid fa-star text-button-tomato"></i>
+                        <i class="fa-regular fa-star text-button-tomato"></i>
+                        <i class="fa-regular fa-star text-button-tomato"></i>
+                        <i class="fa-regular fa-star text-button-tomato"></i>
+
+                        <!-- start modal third  -->
+                        <div class="block">
+                            <a href="#my_modal_8" class="text-button-tomato font-bold">Details</a>
+                            <div class="modal" id="my_modal_8">
+                                <div class="modal-box">
+                                    <div class="flex justify-center">
+                                        <img src="images/fruit8.png" alt="" />
+                                    </div>
+                                    <h3 class="text-lg font-extrabold mt-4">Red Dragon</h3>
+
+                                    <p class="py-4  text-light-gray text-center">
+                                        Professional employees are there for you to pick the most
+                                        <br />
+                                        amazing and fresh fruits.
+                                    </p>
+                                    <div>
+                                        <i class="fa-solid fa-star text-button-tomato"></i>
+                                        <i class="fa-solid fa-star text-button-tomato"></i>
+                                        <i class="fa-regular fa-star text-button-tomato"></i>
+                                        <i class="fa-regular fa-star text-button-tomato"></i>
+                                        <i class="fa-regular fa-star text-button-tomato"></i>
+                                    </div>
+                                    <div class="modal-action flex justify-center text-center">
+                                        <a href="#" class="btn btn-outline btn-error">Close</a>
+                                        <a href="#" class="btn bg-button-tomato text-white">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- modal end  -->
+                    </div>
+                    <div class="space-y-5 border-2 rounded-lg text-center p-8 mt-5">
+                        <div class="flex justify-center">
+                            <img src="images/fruit9.png" alt="fruit6" />
+                        </div>
+                        <h3 class="font-bold text-2xl text-center">12.90$ - 18.85$</h3>
+                        <hr />
+                        <p class="text-light-gray">Banana</p>
+                        <i class="fa-solid fa-star text-button-tomato"></i>
+                        <i class="fa-solid fa-star text-button-tomato"></i>
+                        <i class="fa-regular fa-star text-button-tomato"></i>
+                        <i class="fa-regular fa-star text-button-tomato"></i>
+                        <i class="fa-regular fa-star text-button-tomato"></i>
+
+                        <!-- start modal 4th  -->
+                        <div class="block">
+                            <a href="#my_modal_9" class="text-button-tomato font-bold">Details</a>
+                            <div class="modal" id="my_modal_9">
+                                <div class="modal-box">
+                                    <div class="flex justify-center">
+                                        <img src="images/fruit9.png" alt="" />
+                                    </div>
+                                    <h3 class="text-lg font-extrabold mt-4">Banana</h3>
+
+                                    <p class="py-4 text-light-gray text-center">
+                                        Professional employees are there for you to pick the most
+                                        <br />
+                                        amazing and fresh fruits.
+                                    </p>
+                                    <div>
+                                        <i class="fa-solid fa-star text-button-tomato"></i>
+                                        <i class="fa-solid fa-star text-button-tomato"></i>
+                                        <i class="fa-regular fa-star text-button-tomato"></i>
+                                        <i class="fa-regular fa-star text-button-tomato"></i>
+                                        <i class="fa-regular fa-star text-button-tomato"></i>
+                                    </div>
+                                    <div class="modal-action flex justify-center text-center">
+                                        <a href="#" class="btn btn-outline btn-error">Close</a>
+                                        <a href="#" class="btn bg-button-tomato text-white">Buy Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- modal end  -->
+                    </div>
+                </div>
+            </div>
+            </dialog>
+
+
+            </div>
+        </section>
+
+    </main>
 </body>
+
 </html>
